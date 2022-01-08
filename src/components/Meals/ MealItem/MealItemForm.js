@@ -10,14 +10,16 @@ const MealItemForm= props => {
     const amountInputRef=useRef();// creates a reference that will be used in Input component 
     const submitHandler=event=>{ 
         event.preventDefault(); //prevents from reload
-
+//gets the number amountInputRef  
         const enteredAmount=amountInputRef.current.value; 
-        const enteredAmountNumber=+enteredAmount; // converts string to number 
+        const enteredAmountNumber=+enteredAmount; // converts string to number  
+
         if( enteredAmount.trim().length ===0 || enteredAmountNumber<1 ||enteredAmountNumber>5) { 
             setAmountIsValid(false);// set to false
             return; 
         }; 
         props.onAddToCart(enteredAmountNumber);
+        //pass a function onAddToCart
     };
 
     return <form className={classes.form} onSubmit={submitHandler}> 

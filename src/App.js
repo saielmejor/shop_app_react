@@ -20,7 +20,7 @@ function App() {
 //Wrap with CartProvider so it can pass cart data into all components 
   return (
     <CartProvider>
-      {cartIsShown && <Cart onClose= {hideCartHandler}/>}
+      {cartIsShown && <Cart  onClose= {hideCartHandler}/>}
       <Header onShowCart={showCartHandler}/>
       {/* <Header onShownCart={showCartHandler} /> */}
       <main>
